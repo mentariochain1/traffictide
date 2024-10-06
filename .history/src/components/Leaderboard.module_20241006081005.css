@@ -1,0 +1,145 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 16px 120px;
+  background-color: #000;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.pointsBalance {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+
+.pointsIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.pointsAmount {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.userPosition {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.trophyIcon {
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+.positionInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.positionLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.positionText {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.leaderboardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboardItem {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.rank {
+  font-size: 18px;
+  font-weight: 700;
+  min-width: 30px;
+  text-align: center;
+  margin-right: 12px;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.username {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ticketsInfo {
+  display: flex;
+  align-items: center;
+}
+
+.tickets {
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.chevron {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@supports (padding: max(0px)) {
+  .content {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-bottom: max(120px, env(safe-area-inset-bottom) + 120px);
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}

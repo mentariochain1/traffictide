@@ -1,0 +1,200 @@
+.container {
+  background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(10,10,10,0.98) 100%);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 0 0 16px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, 
+    rgba(255,182,193,0.06) 0%,
+    rgba(255,218,185,0.06) 20%,
+    rgba(176,224,230,0.06) 40%,
+    rgba(152,251,152,0.06) 60%,
+    rgba(230,230,250,0.06) 80%,
+    rgba(255,182,193,0.06) 100%
+  );
+  animation: rotate 25s linear infinite;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.exchangeInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.exchangeItem {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  width: 48%;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  margin-right: 12px; /* Добавляем отступ справа от иконки */
+  color: #FFFFFF;
+  opacity: 0.9;
+  width: 24px;
+  height: 24px;
+}
+
+.exchangeDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.exchangeValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.exchangeLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.arrowIcon {
+  color: #FFFFFF;
+  opacity: 0.7;
+  width: 20px;
+  height: 20px;
+}
+
+.openButton {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 3px 12px rgba(79, 70, 229, 0.4);
+  margin-top: 12px;
+}
+
+.openButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 6px rgba(79, 70, 229, 0.4);
+}
+
+.openButton:disabled {
+  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.opening {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.notification {
+  position: fixed;
+  top: env(safe-area-inset-top);
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out;
+}
+
+.notificationContent {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.progressBar {
+  height: 3px;
+  background-color: #FFFFFF;
+  transition: width 0.1s linear;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding: 14px;
+    min-height: 180px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .exchangeValue {
+    font-size: 14px;
+  }
+
+  .exchangeLabel {
+    font-size: 11px;
+  }
+
+  .openButton {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 767px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+}

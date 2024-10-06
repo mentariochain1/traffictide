@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 16px 120px; /* Увеличен нижний отступ */
+  background-color: #000;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.pointsBalance {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.pointsIcon {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+  color: #4F46E5;
+}
+
+.pointsAmount {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.userPosition {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trophyIcon {
+  color: #4F46E5;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0px 1px 2px rgba(79, 70, 229, 0.3));
+}
+
+.positionInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.positionLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 8px;
+}
+
+.positionText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboardItem {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.leaderboardItem:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.currentUser {
+  background: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.5);
+}
+
+.rank {
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+  margin-right: 12px;
+  color: #4F46E5;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.username {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ticketsInfo {
+  display: flex;
+  align-items: center;
+}
+
+.tickets {
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 6px;
+  color: #4F46E5;
+}
+
+.chevron {
+  color: rgba(255, 255, 255, 0.5);
+  width: 16px;
+  height: 16px;
+}
+
+@media (min-width: 390px) {
+  .content {
+    padding: 20px 20px 80px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .pointsAmount {
+    font-size: 16px;
+  }
+
+  .leaderboardItem {
+    padding: 12px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+
+  .tickets {
+    font-size: 18px;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .content {
+    padding-top: max(16px, env(safe-area-inset-top));
+    padding-bottom: max(120px, env(safe-area-inset-bottom) + 120px); /* Увеличен нижний отступ */
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}

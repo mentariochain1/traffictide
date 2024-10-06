@@ -1,0 +1,251 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scrollContainer {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gradientOverlay {
+  padding: 24px 16px 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.avatarContainer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 16px;
+}
+
+.avatarBorder {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--avatar-color-1, #4F46E5), var(--avatar-color-2, #7C3AED), var(--avatar-color-1, #4F46E5));
+  animation: rotate 10s linear infinite;
+}
+
+.avatarInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #000;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.username {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-align: center;
+}
+
+.content {
+  background-color: #000;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  padding: 20px 16px 120px; /* Увеличен нижний отступ */
+  margin-top: -20px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px;
+  width: 48%;
+}
+
+.statIcon {
+  margin-right: 12px;
+  color: #4F46E5;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.exchangeContainer {
+  margin-bottom: 24px;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 18px;
+  background-color: var(--accent-color, #4F46E5);
+  border-radius: 1.5px;
+}
+
+.connectionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connectionItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.connectionIcon {
+  margin-right: 12px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.connectionInfo {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connectionLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.connectionUsername {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chevronIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.editButton {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.editButton:active {
+  background-color: #E5E5E5;
+  transform: scale(0.98);
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 390px) {
+  .name {
+    font-size: 28px;
+  }
+
+  .username {
+    font-size: 18px;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .connectionLabel {
+    font-size: 16px;
+  }
+
+  .connectionUsername {
+    font-size: 14px;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .gradientOverlay {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .content {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(120px, env(safe-area-inset-bottom) + 120px); /* Увеличен нижний отступ */
+  }
+}

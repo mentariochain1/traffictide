@@ -1,0 +1,257 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scrollContainer {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 120px; /* Увеличиваем отступ снизу */
+}
+
+.gradientOverlay {
+  padding: 24px 16px 30px; /* Уменьшаем нижний отступ */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Уменьшаем отступ */
+}
+
+.avatarContainer {
+  position: relative;
+  width: 100px; /* Уменьшаем размер аватара */
+  height: 100px;
+  margin-bottom: 12px;
+}
+
+.avatarBorder {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--avatar-color-1, #4F46E5), var(--avatar-color-2, #7C3AED), var(--avatar-color-1, #4F46E5));
+  animation: rotate 10s linear infinite;
+}
+
+.avatarInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #000;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 22px; /* Уменьшаем размер шрифта */
+  font-weight: 700;
+  margin: 0 0 2px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.username {
+  font-size: 14px; /* Уменьшаем размер шрифта */
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-align: center;
+}
+
+.content {
+  background-color: #000;
+  border-top-left-radius: 28px; /* Уменьшаем радиус */
+  border-top-right-radius: 28px;
+  padding: 16px 16px 32px; /* Увеличиваем нижний отступ */
+  margin-top: -16px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Уменьшаем отступ */
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px;
+  width: 48%;
+}
+
+.statIcon {
+  margin-right: 10px;
+  color: #4F46E5;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 18px; /* Уменьшаем размер шрифта */
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 12px; /* Уменьшаем размер шрифта */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.exchangeContainer {
+  margin-bottom: 20px; /* Уменьшаем отступ */
+}
+
+.section {
+  margin-bottom: 20px; /* Уменьшаем отступ */
+}
+
+.sectionTitle {
+  font-size: 16px; /* Уменьшаем размер шрифта */
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  position: relative;
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 16px;
+  background-color: var(--accent-color, #4F46E5);
+  border-radius: 1px;
+}
+
+.connectionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connectionItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.connectionIcon {
+  margin-right: 10px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.connectionInfo {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connectionLabel {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.connectionUsername {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chevronIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.editButton {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-bottom: 16px; /* Уменьшаем отступ снизу для кнопки */
+}
+
+.editButton:active {
+  background-color: #E5E5E5;
+  transform: scale(0.98);
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 390px) {
+  .name {
+    font-size: 24px;
+  }
+
+  .username {
+    font-size: 16px;
+  }
+
+  .statValue {
+    font-size: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+
+  .connectionLabel {
+    font-size: 14px;
+  }
+
+  .connectionUsername {
+    font-size: 12px;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .gradientOverlay {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .content {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(32px, env(safe-area-inset-bottom) + 32px);
+  }
+
+  .scrollContainer {
+    padding-bottom: max(120px, env(safe-area-inset-bottom) + 120px);
+  }
+}

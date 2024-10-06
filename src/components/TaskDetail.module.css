@@ -1,0 +1,218 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.gradientOverlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(79, 70, 229, 0.4) 100%);
+  padding: 24px 16px 40px; /* Уменьшено */
+}
+
+.taskHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.taskIcon {
+  color: #fff;
+  margin-bottom: 12px; /* Уменьшено */
+  width: 36px; /* Уменьшено */
+  height: 36px; /* Уменьшено */
+}
+
+.taskTitle {
+  font-size: 22px; /* Уменьшено */
+  font-weight: 700;
+  margin: 0 0 12px; /* Уменьшено */
+}
+
+.pointsBalance {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px; /* Уменьшено */
+  padding: 6px 12px; /* Уменьшено */
+}
+
+.pointsIcon {
+  margin-right: 6px; /* Уменьшено */
+  width: 18px; /* Уменьшено */
+  height: 18px; /* Уменьшено */
+  color: #4F46E5;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1)); /* Уменьшено */
+}
+
+.pointsAmount {
+  font-size: 16px; /* Уменьшено */
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  margin-top: -30px; /* Уменьшено */
+  background-color: #000;
+  border-top-left-radius: 20px; /* Уменьшено */
+  border-top-right-radius: 20px; /* Уменьшено */
+  padding: 20px 16px; /* Уменьшено */
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+  font-size: 14px; /* Уменьшено */
+  line-height: 1.4; /* Уменьшено */
+  margin-bottom: 20px; /* Уменьшено */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.subTasksContainer {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px; /* Уменьшено */
+  padding: 16px; /* Уменьшено */
+  margin-bottom: 20px; /* Уменьшено */
+}
+
+.subTasksTitle {
+  font-size: 18px; /* Уменьшено */
+  font-weight: 600;
+  margin-bottom: 12px; /* Уменьшено */
+  color: #FFFFFF;
+}
+
+.progressBar {
+  height: 3px; /* Уменьшено */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1.5px; /* Уменьшено */
+  margin-bottom: 16px; /* Уменьшено */
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4F46E5, #7C3AED);
+  transition: width 0.3s ease;
+}
+
+.subTaskList {
+  list-style: none;
+  padding: 0;
+}
+
+.subTaskItem {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px; /* Уменьшено */
+  padding: 12px; /* Уменьшено */
+  margin-bottom: 8px; /* Уменьшено */
+  transition: all 0.3s ease;
+}
+
+.subTaskItem:last-child {
+  margin-bottom: 0;
+}
+
+.subTaskItem:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.subTaskNumber {
+  width: 20px; /* Уменьшено */
+  height: 20px; /* Уменьшено */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 12px; /* Уменьшено */
+  font-size: 12px; /* Уменьшено */
+}
+
+.subTaskContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subTaskDescription {
+  font-size: 14px; /* Уменьшено */
+  line-height: 1.3; /* Уменьшено */
+}
+
+.subTaskStatus {
+  margin-left: 8px; /* Уменьшено */
+}
+
+.completedIcon, .incompleteIcon {
+  width: 18px; /* Уменьшено */
+  height: 18px; /* Уменьшено */
+}
+
+.completedIcon {
+  color: #4F46E5;
+}
+
+.incompleteIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.subTaskItem.completed .subTaskDescription {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.subTaskItem.completed .subTaskNumber {
+  background: #4F46E5;
+  color: #fff;
+}
+
+@media (min-width: 390px) {
+  .gradientOverlay {
+    padding: 32px 20px 50px; /* Уменьшено */
+  }
+
+  .taskTitle {
+    font-size: 24px; /* Уменьшено */
+  }
+
+  .content {
+    margin-top: -40px; /* Уменьшено */
+    padding: 24px 20px; /* Уменьшено */
+  }
+
+  .description {
+    font-size: 15px; /* Уменьшено */
+  }
+
+  .subTasksTitle {
+    font-size: 20px; /* Уменьшено */
+  }
+
+  .subTaskDescription {
+    font-size: 15px; /* Уменьшено */
+  }
+}
+
+@supports (padding: max(0px)) {
+  .gradientOverlay {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .content {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
+
+.pointsIcon {
+  fill: url(#coinGradient);
+}
